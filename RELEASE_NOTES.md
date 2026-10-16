@@ -1,13 +1,13 @@
-# Jungle Atmos Demo Lab v0.3.2
+# Jungle Atmos Demo Lab v0.3.3
 
 ## Updates
 
-- Change the in-app updater to use the separate public binaries-only feed at `waderaider/jungle-atmos-updates`; the source repository remains private.
-- Remove the private GitHub device-flow and stored-token dependency from the updater. An explicit update check now uses anonymous HTTPS requests.
-- Continue verifying the installer against the published SHA-256 manifest before the helper applies it.
-- Preserve the 21-scene catalog, live per-object source-waveform panel, and 7.1.2 room-map visualization.
+- Fix the updater's install-path handling. The update helper now passes the existing app directory as NSIS's final, unquoted `/D=` parameter, preserving custom install paths, including paths with spaces.
+- Keep anonymous HTTPS checks against the public updates-only feed; no GitHub login, OAuth consent, or stored credential is required.
+- Verify the downloaded installer against `SHA256SUMS.txt` before applying it.
+- Preserve all 21 moving-object scenes, the live per-object source-waveform panel, and the 7.1.2 room-map visualization.
 
-The public GitHub release contains only `JungleAtmos-Setup-x64.exe`, `SHA256SUMS.txt`, and this `RELEASE_NOTES.md`. GitHub also generates Source code ZIP/tar.gz entries; the repository snapshot behind those archives contains only the release-notes file and no application source code.
+The public release uploads only `JungleAtmos-Setup-x64.exe`, `SHA256SUMS.txt`, and this `RELEASE_NOTES.md`. GitHub also displays generated source-code ZIP/tar.gz entries; this tag's repository snapshot contains only the release-notes file, not application source code.
 
 ## Audio-format note
 
